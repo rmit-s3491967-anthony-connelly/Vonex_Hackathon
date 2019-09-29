@@ -14,10 +14,26 @@ export default class Login extends Component {
                     password: ''};
     }
 
-    // handleSubmit = () => {
-    //     const {navigate} = this.props.navigation;
-    //     navigate('Camera')    
-    // }
+    handleSubmit = ({ username, password}) => {
+        console.log("got it")
+        axios.post('http://10.132.17.173:8080/verify_user',
+            
+             {
+                username: this.state.username,
+                password: this.state.password
+            }
+
+        ).then(response => {
+            if (response.data.login == true){ 
+                this.props.navigation.navigate('Home')
+            }} )
+        .catch(error => {
+            console.error(
+            `There has been a problem with your fetch operation: ${error.message}`
+            );
+      });
+
+    }
 
     render() {
 
@@ -38,7 +54,7 @@ export default class Login extends Component {
                         secureTextEntry
                         />
                     <Button title = "Log In"
-                        onPress={() => this.props.navigation.navigate('Home')}/>
+                        onPress={this.handleSubmit }/>
                 </View>
             </View>
         );
