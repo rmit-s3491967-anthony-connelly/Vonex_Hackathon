@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import {
     StyleSheet,
-    TextInput,
     Button,
     View} from 'react-native';
-import axios from 'axios';
 import { RNCamera } from 'react-native-camera';
 
 
@@ -18,8 +16,10 @@ export default class Camera extends Component {
               }}
               style= {styles.camera}
             >
-            </RNCamera>
-           </View>
+        </RNCamera>
+              <Button title='Scan'
+                onPress={() => this.props.navigation.navigate('Profile')}/>
+        </View>
          );
     }
 }

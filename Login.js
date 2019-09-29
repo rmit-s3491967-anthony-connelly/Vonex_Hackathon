@@ -6,7 +6,6 @@ import {
     View} from 'react-native';
 import axios from 'axios';
 
-
 export default class Login extends Component {
 
     constructor(props) {
@@ -15,23 +14,10 @@ export default class Login extends Component {
                     password: ''};
     }
 
-    handleSubmit = ({ username, password}) => {
-        
-        axios
-        .post("http://localhost:8080/verify_user", 
-            {
-                username: this.state.username,
-                password: this.state.password
-            }
-        )
-        .then(response => console.log(response))
-        .catch(error => {
-            console.error(
-            `There has been a problem with your fetch operation: ${error.message}`
-            );
-      });
-
-    }
+    // handleSubmit = () => {
+    //     const {navigate} = this.props.navigation;
+    //     navigate('Camera')    
+    // }
 
     render() {
 
@@ -52,7 +38,7 @@ export default class Login extends Component {
                         secureTextEntry
                         />
                     <Button title = "Log In"
-                        onPress={this.handleSubmit }/>
+                        onPress={() => this.props.navigation.navigate('Home')}/>
                 </View>
             </View>
         );
