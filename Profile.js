@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {
+    Alert,
     StyleSheet,
     Text,
     Button,
@@ -23,7 +24,7 @@ export default class Home extends Component {
                 <Button
                     title="Request Dashcam Footage"
                     color="#f194ff"
-                    onPress={() => Alert.alert('Button with adjusted color pressed')}
+                    onPress={() => Alert.alert('Your request has been submitted')}
                     />
             </View>
         );
