@@ -15,9 +15,10 @@ export default class Home extends Component {
                     <Button title = 'Scan QR Code'
                         onPress={() => this.props.navigation.navigate('Camera')}/>
                 </View>
-                <View>
+                <View style={styles.welcomeMessage}>
                     <Text>Welcome to SmartDash!</Text>
-                    <Text>When </Text>
+                    <Text>Car accidents can be a stressful time. We've eliminated the added stress of exchanging details! </Text>
+                    <Text>Simply scan the QR code of the other party to exchange information!</Text>
                 </View>
             </View>
         );
