@@ -8,6 +8,8 @@
 
 import React from 'react';
 import Login from './Login';
+import { RNCamera } from 'react-native-camera';
+import Camera from './Camera';
 import {
   SafeAreaView,
   StyleSheet,
@@ -29,7 +31,7 @@ const App: () => React$Node = () => {
   return (
     <>
       
-      <Login/>
+      <Camera/>
       
     </>
   );
