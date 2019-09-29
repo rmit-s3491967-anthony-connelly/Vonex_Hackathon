@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {
     StyleSheet,
-    TextInput,
+    Text,
     Button,
     View} from 'react-native';
 
@@ -14,6 +14,10 @@ export default class Home extends Component {
                 <View style= {styles.topbar}>
                     <Button title = 'Scan QR Code'
                         onPress={() => this.props.navigation.navigate('Camera')}/>
+                </View>
+                <View>
+                    <Text>Welcome to SmartDash!</Text>
+                    <Text>When </Text>
                 </View>
             </View>
         );

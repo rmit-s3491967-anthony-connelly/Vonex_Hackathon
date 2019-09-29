@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {
     StyleSheet,
     TextInput,
+    Image,
+    Text,
     Button,
     View} from 'react-native';
 import axios from 'axios';
@@ -40,6 +42,10 @@ export default class Login extends Component {
         return (
             <View style= {styles.background}>
                 <View style= {styles.container}>
+                    <Image 
+                        source={require('./Logo.png')}
+                        style ={styles.image}/>
+                    <Text style={styles.title}>SmartDash&trade;</Text>
                     <TextInput
                         name = "username"
                         onChangeText={(username) => this.setState({username})}
@@ -81,5 +87,16 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         textAlign: 'center',
         backgroundColor: 'rgb(160, 224, 235)'
+    },
+
+    image:{
+        height:200,
+        width:200,
+    },
+
+    title: {
+        fontSize:30,
+        color:'white',
+        marginBottom:20
     }
 });
