@@ -16,16 +16,15 @@ export default class Login extends Component {
     }
 
     handleSubmit = ({ username, password}) => {
-        
-        axios
-        .post("http://localhost:8080/verify_user", 
-            {
+        console.log("got it")
+        axios.post('http://10.132.17.173:8080/verify_user',
+            
+             {
                 username: this.state.username,
                 password: this.state.password
             }
-        )
-        .then(response => console.log(response))
-        .catch(error => {
+
+        ).then(response => console.log(response)).catch(error => {
             console.error(
             `There has been a problem with your fetch operation: ${error.message}`
             );
